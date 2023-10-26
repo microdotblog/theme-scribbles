@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+{{ partial "header_home.html" . }}    
+
+<div class="w-full flex flex-col items-center">
+  <div class="flex flex-col gap-8 mt-4 max-w-2xl h-feed">
+
+	    {{ $paginator := .Paginate (where .Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
+	    {{ range $paginator.Pages  }}
+
+        <article class="flex flex-col w-full p-2 rounded-xl prose dark:prose-invert max-w-full bg-slate-100 dark:bg-slate-900 shadow relative h-entry">
+  
+          <a href="{{ .Permalink }}" class="no-underline p-4 pb-14 relative hover:bg-slate-200 hover:dark:bg-slate-800 transition rounded-lg">
+  
+		        {{ if .Title }}
+              <h3 class="mt-0 text-2xl font-bold">{{ .Title }}</h3>
+		        {{ end }}
+            
+            <p class="e-content mb-0">
+              {{ .Content }}
+            </p>
+  
+          </a>
+  
+          <div class="absolute bottom-4 left-6">
+              <a href="{{ .Permalink }}" class="u-url text-sm inline-flex mt-4 rounded-full p-1 px-2 bg-slate-300 dark:bg-slate-600 text-slate-700 dark:text-slate-300 border border-transparent hover:border-slate-200 no-underline">
+                <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "January 2, 2006" }}</time>
+              </a>
+          </div>
+        </article>
+
+      {{ end }}
+  </div>
+</div>
+
+{{ end }}

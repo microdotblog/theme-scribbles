@@ -1,0 +1,19 @@
+<header class="flex flex-col items-center w-full mb-20">
+	<img class="rounded-full w-24 h-24" loading="lazy" src="{{ .Site.Author.avatar }}"/>
+	<author class="prose prose-stone dark:prose-invert text-2xl mt-6 font-bold">{{ .Site.Title }}</author>
+	<span class="w-12 h-1 bg-brand mt-8"></span>
+	<div class="prose prose-lg dark:prose-invert w-full leading-tight max-w-2xl text-center mt-6">
+		<div>{{ .Site.Params.itunes_description }}</div>
+	</div>
+	
+	<span class="w-12 h-1 bg-brand mt-6"></span>
+
+	<a href="/feed.xml" class="mt-8 text-sm dark:text-slate-200 underline flex flex-row items-center">
+		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/>
+		</svg>
+
+		Subscribe via RSS here
+		  
+	</a>
+</header>
