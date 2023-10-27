@@ -5,7 +5,7 @@
 <div class="w-full flex flex-col items-center">
   <div class="flex flex-col gap-8 mt-4 max-w-2xl h-feed">
 
-	    {{ $paginator := .Paginate (where .Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
+	    {{ $paginator := .Paginate (where .Pages.ByDate.Reverse "Type" "post") }}
 	    {{ range $paginator.Pages  }}
 
         <article class="flex flex-col w-full p-2 rounded-xl prose dark:prose-invert max-w-full bg-slate-100 dark:bg-slate-900 shadow relative h-entry">
