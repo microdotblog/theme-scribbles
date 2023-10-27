@@ -2,16 +2,17 @@
 
 {{ partial "header_post.html" . }}    
 
-<div class="post">
+<article class="flex flex-col prose prose-stone dark:prose-invert min-w-full prose-a:text-brand items-center">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ .Title }}</h1>
-  </header>
+  <date class="text-sm w-full text-center font-semibold">{{ .Date.Format "January 2, 2006" }}</date>
+  {{ if .Title }}
+    <h1 class="text-4xl w-full text-center font-bold mt-8 mb-20 max-w-xl">{{ .Title }}</h1>
+  {{ end }}
 
-  <article class="post-content">
+  <div class="prose-xl prose-heading:text-2xl w-full leading-tight max-w-2xl">
     {{ .Content }}
-  </article>
+  </div>
 
-</div>
+</article>
 
 {{ end }}
