@@ -12,9 +12,9 @@
   
 		  <a href="{{ .Permalink }}" class="no-underline p-4 pb-14 relative hover:bg-slate-200 hover:dark:bg-slate-800 transition rounded-lg">
   
-				{{ if .Title }}
-			  <h3 class="mt-0 text-2xl font-bold">{{ .Title }}</h3>
-				{{ end }}
+			{{ if .Title }}
+			  <h3 class="mt-0 text-2xl font-bold" style="margin-bottom: 1.25em;">{{ .Title }}</h3>
+			{{ end }}
 			
 			<div class="e-content mb-0" style="margin-top: -1.25em; margin-bottom: -1.25em;">
 			  {{ .Content }}
